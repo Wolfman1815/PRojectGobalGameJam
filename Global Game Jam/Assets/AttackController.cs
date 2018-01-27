@@ -21,7 +21,7 @@ public class AttackController : MonoBehaviour
 	private IEnumerator Attack()
 	{
 		var initialPosition = AttackObject.transform.position;
-		var targetPosition = initialPosition + AttackObject.transform.rotation * new Vector3(0, 2.9f);
+		var targetPosition = initialPosition + AttackObject.transform.rotation * new Vector3(0, 1);
 		yield return MoveOverTime(targetPosition, 0.06f);
 
 		yield return new WaitForSeconds(0.3f);
