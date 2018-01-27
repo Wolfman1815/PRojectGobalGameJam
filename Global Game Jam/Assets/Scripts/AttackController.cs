@@ -12,6 +12,7 @@ public class AttackController : MonoBehaviour
 		{
 			if (!m_active)
 			{
+				AttackObject.SetActive(true);
 				m_active = true;
 				StartCoroutine("Attack");
 			}
@@ -28,6 +29,7 @@ public class AttackController : MonoBehaviour
 
 		yield return MoveOverTime(initialPosition, 0.06f);
 		m_active = false;
+		AttackObject.SetActive(false);
 	}
 
 	private IEnumerator MoveOverTime(Vector3 targetPosition, float durationSeconds)

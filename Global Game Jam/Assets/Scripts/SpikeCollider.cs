@@ -14,4 +14,15 @@ public class SpikeCollider : MonoBehaviour
 			Destroy(other.gameObject);
 		}
 	}
+
+	void OnCollisionEnter2D(Collision2D collision)
+	{
+		bool isPlayer = gameObject.CompareTag("Player");
+		bool otherIsPlayer = collision.gameObject.CompareTag("Player");
+
+		if (isPlayer != otherIsPlayer)
+		{
+			Destroy(collision.gameObject);
+		}
+	}
 }
