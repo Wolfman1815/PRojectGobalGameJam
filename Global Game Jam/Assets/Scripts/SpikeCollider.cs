@@ -10,7 +10,12 @@ public class SpikeCollider : MonoBehaviour
 	{
 		if (!other.gameObject.CompareTag(UnharmedTag))
 		{
-			Destroy(other.gameObject);
+			var barrierController = other.gameObject.GetComponent<BarrierController>();
+
+			if (barrierController == null || !barrierController.BarrierObject.activeSelf)
+			{
+				Destroy(other.gameObject);
+			}
 		}
 	}
 
