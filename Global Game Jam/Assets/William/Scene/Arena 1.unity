@@ -453,6 +453,12 @@ Prefab:
       propertyPath: m_Name
       value: Enemy (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 212419014411559390, guid: b7663220ed88f704fb5e28212d4bfe39,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0ebfad7e68aec2d4da81c8be4e5a33c5,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b7663220ed88f704fb5e28212d4bfe39, type: 2}
   m_IsPrefabParent: 0
@@ -5820,6 +5826,12 @@ Prefab:
       propertyPath: m_Name
       value: Enemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 212419014411559390, guid: b7663220ed88f704fb5e28212d4bfe39,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7033135d68ad45a45a66456f8296244b,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b7663220ed88f704fb5e28212d4bfe39, type: 2}
   m_IsPrefabParent: 0

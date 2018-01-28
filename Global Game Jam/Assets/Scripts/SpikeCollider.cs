@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SpikeCollider : MonoBehaviour
 {
@@ -26,7 +27,14 @@ public class SpikeCollider : MonoBehaviour
 
 		if (barrierController == null || !barrierController.BarrierObject.activeSelf)
 		{
-			Destroy(other.gameObject);
+			if (other.gameObject.CompareTag("Player"))
+			{
+				SceneManager.LoadScene(0);
+			}
+			else
+			{
+				Destroy(other.gameObject);
+			}
 		}
 	}
 
@@ -45,7 +53,14 @@ public class SpikeCollider : MonoBehaviour
 
 		if (barrierController == null || !barrierController.BarrierObject.activeSelf)
 		{
-			Destroy(collision.gameObject);
+			if (collision.gameObject.CompareTag("Player"))
+			{
+				SceneManager.LoadScene(0);
+			}
+			else
+			{
+				Destroy(collision.gameObject);
+			}
 		}
 	}
 }
