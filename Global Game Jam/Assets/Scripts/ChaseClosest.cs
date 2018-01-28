@@ -22,7 +22,8 @@ public class ChaseClosest : MonoBehaviour {
 		if(distanceToTarget < chaseRange) {
 			Vector3 targetDir = target.position - transform.position;
 			float angle = Mathf.Atan2(targetDir.y, targetDir.x) * Mathf.Rad2Deg - 90f;
-			Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
+			//Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
+			Quaternion q = Quaternion.Euler(0, 0, angle-45);
 			transform.rotation = Quaternion.RotateTowards(transform.rotation, q, 180);
 			gameObject.GetComponent<Rigidbody2D> ().AddForce (transform.rotation * Vector3.up * Time.deltaTime * speed, ForceMode2D.Force);
 		}
