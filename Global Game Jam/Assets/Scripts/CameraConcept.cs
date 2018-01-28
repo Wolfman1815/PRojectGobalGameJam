@@ -13,8 +13,8 @@ public class CameraConcept : MonoBehaviour {
 	}
 
 	void Update () {
-		x = Input.GetAxis ("Horizontal") * Speed;
-		y = Input.GetAxis ("Vertical") * Speed;
+		x = Input.GetAxis ("Horizontal") * Speed * Time.deltaTime;
+		y = Input.GetAxis ("Vertical") * Speed * Time.deltaTime;
 		pos = transform.position;
 		pos.x += x;
 		pos.y += y;
