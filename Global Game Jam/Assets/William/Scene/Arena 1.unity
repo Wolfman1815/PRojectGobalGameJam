@@ -1209,7 +1209,7 @@ GameObject:
   - component: {fileID: 483875394}
   m_Layer: 0
   m_Name: ObstacleWall (4)
-  m_TagString: Player
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3118,7 +3118,7 @@ GameObject:
   - component: {fileID: 1214706056}
   m_Layer: 0
   m_Name: ObstacleWall (3)
-  m_TagString: Player
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3415,7 +3415,7 @@ GameObject:
   - component: {fileID: 1294909722}
   m_Layer: 0
   m_Name: ObstacleWall (2)
-  m_TagString: Player
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4326,7 +4326,7 @@ GameObject:
   - component: {fileID: 1706893970}
   m_Layer: 0
   m_Name: ObstacleWall (5)
-  m_TagString: Player
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
