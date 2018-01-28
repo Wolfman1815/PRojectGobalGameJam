@@ -21,6 +21,8 @@ public class AttackController : MonoBehaviour
 
 	private IEnumerator Attack()
 	{
+		ZoomForward();
+
 		var initialPosition = AttackObject.transform.position;
 		var targetRelativePosition = new Vector3(0, 1);
 		yield return MoveOverTime(targetRelativePosition, 0.06f);
@@ -30,6 +32,12 @@ public class AttackController : MonoBehaviour
 		yield return MoveOverTime(Vector3.zero, 0.06f);
 		m_active = false;
 		AttackObject.SetActive(false);
+	}
+
+	void ZoomForward()
+	{
+		var rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(-180, -180, -33));
+		gameObject.GetComponent<Rigidbody2D>().AddForce(rotation * new Vector3(20, 0), ForceMode2D.Impulse);
 	}
 
 	private IEnumerator MoveOverTime(Vector3 targetRelativePosition, float durationSeconds)

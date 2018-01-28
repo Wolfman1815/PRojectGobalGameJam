@@ -236,7 +236,21 @@ Prefab:
     - target: {fileID: 114589565145892676, guid: f4197d09b00dae34fa3a3ca8f704df5b,
         type: 2}
       propertyPath: Speed
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 50728152961488144, guid: f4197d09b00dae34fa3a3ca8f704df5b,
+        type: 2}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50728152961488144, guid: f4197d09b00dae34fa3a3ca8f704df5b,
+        type: 2}
+      propertyPath: m_LinearDrag
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122272574614766, guid: f4197d09b00dae34fa3a3ca8f704df5b, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f4197d09b00dae34fa3a3ca8f704df5b, type: 2}
@@ -288,7 +302,7 @@ Prefab:
     - target: {fileID: 50805184587235278, guid: b7663220ed88f704fb5e28212d4bfe39,
         type: 2}
       propertyPath: m_AngularDrag
-      value: 0.05
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 50805184587235278, guid: b7663220ed88f704fb5e28212d4bfe39,
         type: 2}

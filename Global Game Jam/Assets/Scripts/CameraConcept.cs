@@ -3,22 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraConcept : MonoBehaviour {
-	public float Speed = 1;
-	private Vector3 pos;
-	private float x;
-	private float y;
+	public float Speed;
 
-	void Start () {
-		
-	}
+	void FixedUpdate () {
+		float x = Input.GetAxis ("Horizontal") * Speed * Time.deltaTime;
+		float y = Input.GetAxis ("Vertical") * Speed * Time.deltaTime;
 
-	void Update () {
-		x = Input.GetAxis ("Horizontal") * Speed * Time.deltaTime;
-		y = Input.GetAxis ("Vertical") * Speed * Time.deltaTime;
-		pos = transform.position;
-		pos.x += x;
-		pos.y += y;
-		transform.position = pos;
+		gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(x, y), ForceMode2D.Force);
 
 		//follow mouse
 		Vector2 playerPos = Camera.main.WorldToViewportPoint (transform.position);
