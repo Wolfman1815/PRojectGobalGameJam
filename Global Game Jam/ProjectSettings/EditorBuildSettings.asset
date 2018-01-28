@@ -5,9 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Evan/EF.unity
-    guid: eb0050b0150713c4a8f6ebd124436b3b
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 51e74425a85dede41b7a8f392e547a23
