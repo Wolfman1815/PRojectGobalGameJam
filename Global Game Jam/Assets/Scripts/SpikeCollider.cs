@@ -4,24 +4,41 @@ using UnityEngine;
 
 public class SpikeCollider : MonoBehaviour
 {
-	public string UnharmedTag;
+	public string[] UnharmedTags;
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if (!other.gameObject.CompareTag(UnharmedTag))
+		var collidedObjectTag = other.gameObject.tag;
+		foreach (var tag in UnharmedTags)
 		{
-			var barrierController = other.gameObject.GetComponent<BarrierController>();
-
-			if (barrierController == null || !barrierController.BarrierObject.activeSelf)
+			if (tag.Equals(collidedObjectTag))
 			{
-				Destroy(other.gameObject);
+				return;
 			}
+		}
+
+		var barrierController = other.gameObject.GetComponent<BarrierController>();
+
+		if (barrierController == null || !barrierController.BarrierObject.activeSelf)
+		{
+			Destroy(other.gameObject);
 		}
 	}
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
-		if (!collision.gameObject.CompareTag(UnharmedTag))
+		var collidedObjectTag = collision.gameObject.tag;
+		foreach (var tag in UnharmedTags)
+		{
+			if (tag.Equals(collidedObjectTag))
+			{
+				return;
+			}
+		}
+
+		var barrierController = collision.gameObject.GetComponent<BarrierController>();
+
+		if (barrierController == null || !barrierController.BarrierObject.activeSelf)
 		{
 			Destroy(collision.gameObject);
 		}
