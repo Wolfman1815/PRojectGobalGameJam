@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class SpikeCollider : MonoBehaviour
 {
+	public string UnharmedTag;
+
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		bool isPlayer = gameObject.CompareTag("Player");
-		bool otherIsPlayer = other.gameObject.CompareTag("Player");
-
-		if (isPlayer != otherIsPlayer)
+		if (!other.gameObject.CompareTag(UnharmedTag))
 		{
 			Destroy(other.gameObject);
 		}
@@ -17,10 +16,7 @@ public class SpikeCollider : MonoBehaviour
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
-		bool isPlayer = gameObject.CompareTag("Player");
-		bool otherIsPlayer = collision.gameObject.CompareTag("Player");
-
-		if (isPlayer != otherIsPlayer)
+		if (!collision.gameObject.CompareTag(UnharmedTag))
 		{
 			Destroy(collision.gameObject);
 		}
