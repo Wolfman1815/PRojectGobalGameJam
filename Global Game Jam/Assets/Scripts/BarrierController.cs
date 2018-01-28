@@ -21,6 +21,8 @@ public class BarrierController : MonoBehaviour
 
 	private IEnumerator Defend()
 	{
+		BlowAwayNearbyEnemies();
+
 		var initialScale = BarrierObject.transform.localScale;
 		var targetScale = new Vector3(1.2f, 1.2f);
 		yield return ScaleOverTime(targetScale, 0.06f);
@@ -30,6 +32,30 @@ public class BarrierController : MonoBehaviour
 		yield return ScaleOverTime(initialScale, 0.06f);
 		m_active = false;
 		BarrierObject.SetActive(false);
+	}
+
+	private void BlowAwayNearbyEnemies()
+	{
+		Vector3 explosionPosition = transform.position;
+		var explosionRadius = 2.8f;
+
+		var colliders = Physics2D.OverlapCircleAll(explosionPosition, explosionRadius);
+
+		foreach (Collider2D hitCollider in colliders)
+		{
+			var hitRigidBody = hitCollider.GetComponent<Rigidbody2D>();
+
+			if (hitRigidBody != null)
+			{
+				var force = hitRigidBody.transform.position - explosionPosition;
+				if (force.magnitude >= explosionRadius)
+				{
+					continue;
+				}
+				
+				hitRigidBody.AddForce(force.normalized * 12, ForceMode2D.Impulse);
+			}
+		}
 	}
 
 	private IEnumerator ScaleOverTime(Vector3 targetScale, float durationSeconds)
