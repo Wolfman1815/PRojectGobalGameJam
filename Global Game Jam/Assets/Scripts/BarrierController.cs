@@ -5,13 +5,15 @@ using UnityEngine;
 public class BarrierController : MonoBehaviour
 {
 	public GameObject BarrierObject;
+	public float BarrierCooldownTimeSeconds;
 
 	void Update ()
 	{
 		if (Input.GetKeyDown(KeyCode.Mouse1))
 		{
-			if (!m_active)
+			if (Time.time >= m_timeOfNextAllowedBarrier && !m_active)
 			{
+				m_timeOfNextAllowedBarrier = Time.time + BarrierCooldownTimeSeconds;
 				BarrierObject.SetActive(true);
 				m_active = true;
 				StartCoroutine("Defend");
@@ -80,4 +82,5 @@ public class BarrierController : MonoBehaviour
 	}
 
 	private bool m_active;
+	private float m_timeOfNextAllowedBarrier = 0;
 }
