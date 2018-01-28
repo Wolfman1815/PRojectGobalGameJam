@@ -5,9 +5,21 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Evan/EF.unity
     guid: eb0050b0150713c4a8f6ebd124436b3b
   - enabled: 1
-    path: Assets/William/Scene/Arena1.unity
+    path: Assets/Scenes/MainMenu.unity
+    guid: 51e74425a85dede41b7a8f392e547a23
+  - enabled: 1
+    path: Assets/William/Scene/Arena 1.unity
     guid: bda79f721fa536d48830a499b9371c6f
+  - enabled: 1
+    path: Assets/William/Scene/Arena 2.unity
+    guid: bbe4a6f6956f7e44faf11e2e18c724a0
+  - enabled: 1
+    path: Assets/William/Scene/Arena 3.unity
+    guid: 7c6f3b59cbb01c747977692f77a0c7a1
+  - enabled: 1
+    path: Assets/William/Scene/Arena 4.unity
+    guid: 80011c560c7920649b97fad8e6dedbcc

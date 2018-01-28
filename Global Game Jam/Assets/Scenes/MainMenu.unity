@@ -123,7 +123,6 @@ GameObject:
   - component: {fileID: 86428817}
   - component: {fileID: 86428819}
   - component: {fileID: 86428818}
-  - component: {fileID: 86428820}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -185,17 +184,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 86428816}
---- !u!114 &86428820
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 86428816}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47b2c588bdd69c8449fe00e5596b2c7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &225511300
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,7 +260,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 86428820}
+      - m_Target: {fileID: 903245535}
         m_MethodName: PlayAction
         m_Mode: 1
         m_Arguments:
@@ -282,7 +270,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &225511303
@@ -403,6 +391,7 @@ GameObject:
   - component: {fileID: 903245533}
   - component: {fileID: 903245532}
   - component: {fileID: 903245531}
+  - component: {fileID: 903245535}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -486,6 +475,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &903245535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 903245530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4642917893b3d754285cf1ab36d4a661, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1105969757
 GameObject:
   m_ObjectHideFlags: 0
@@ -698,7 +698,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 86428820}
+      - m_Target: {fileID: 903245535}
         m_MethodName: QuitAction
         m_Mode: 1
         m_Arguments:
@@ -708,7 +708,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1323974742
