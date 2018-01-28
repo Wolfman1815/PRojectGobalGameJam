@@ -8,7 +8,7 @@ public class AttackController : MonoBehaviour
 
 	void Update ()
 	{
-		if (Input.GetKeyDown(KeyCode.Space))
+		if (Input.GetKeyDown(KeyCode.Mouse0))
 		{
 			if (!m_active)
 			{

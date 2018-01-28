@@ -41,6 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Barriers
+    uniqueID: 2966404555
+    locked: 0
   - name: Spikes
     uniqueID: 2654300007
     locked: 0
