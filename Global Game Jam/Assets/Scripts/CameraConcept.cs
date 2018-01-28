@@ -24,7 +24,7 @@ public class CameraConcept : MonoBehaviour {
 		Vector2 playerPos = Camera.main.WorldToViewportPoint (transform.position);
 		Vector2 mousePos = (Vector2)Camera.main.ScreenToViewportPoint (Input.mousePosition);
 		float angle = angleBetween (playerPos, mousePos);
-		transform.rotation = Quaternion.Euler (0, 0, angle);
+		transform.rotation = Quaternion.Euler (0, 0, angle+45);
 	}
 
 	float angleBetween (Vector3 a, Vector3 b) {
