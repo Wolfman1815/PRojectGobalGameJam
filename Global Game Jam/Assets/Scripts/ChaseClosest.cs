@@ -13,19 +13,33 @@ public class ChaseClosest : MonoBehaviour {
 	}
 
 	void Update () {
-		if (Vector3.Distance (transform.position, player.transform.position) < chaseRange) {
-			target = player.transform;
+		target = FindClosestEnemy ().transform;
+		if (player != null) {
+			float distanceToPlayer = Vector3.Distance (transform.position, player.transform.position);
+			float distanceToTarget = Vector3.Distance (transform.position, target.position);
+			if (distanceToPlayer < distanceToTarget) {
+				Vector3 targetDir = player.transform.position - transform.position;
+				float angle = Mathf.Atan2 (targetDir.y, targetDir.x) * Mathf.Rad2Deg - 90f;
+				//Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
+				Quaternion q = Quaternion.Euler (0, 0, angle - 45);
+				transform.rotation = Quaternion.RotateTowards (transform.rotation, q, 180);
+				gameObject.GetComponent<Rigidbody2D> ().AddForce (transform.rotation * Vector3.up * Time.deltaTime * speed, ForceMode2D.Force);
+			} else {
+				Vector3 targetDir = target.position - transform.position;
+				float angle = Mathf.Atan2(targetDir.y, targetDir.x) * Mathf.Rad2Deg - 90f;
+				//Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
+				Quaternion q = Quaternion.Euler(0, 0, angle-45);
+				transform.rotation = Quaternion.RotateTowards(transform.rotation, q, 180);
+				gameObject.GetComponent<Rigidbody2D> ().AddForce (transform.rotation * Vector3.up * Time.deltaTime * speed, ForceMode2D.Force);
+			}
 		} else {
-			target = FindClosestEnemy().transform;
-		}
-		float distanceToTarget = Vector3.Distance(transform.position, target.position);
-		if(distanceToTarget < chaseRange) {
-			Vector3 targetDir = target.position - transform.position;
-			float angle = Mathf.Atan2(targetDir.y, targetDir.x) * Mathf.Rad2Deg - 90f;
+			//GAME OVER
+			//Vector3 targetDir = target.position - transform.position;
+			//float angle = Mathf.Atan2(targetDir.y, targetDir.x) * Mathf.Rad2Deg - 90f;
 			//Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
-			Quaternion q = Quaternion.Euler(0, 0, angle-45);
-			transform.rotation = Quaternion.RotateTowards(transform.rotation, q, 180);
-			gameObject.GetComponent<Rigidbody2D> ().AddForce (transform.rotation * Vector3.up * Time.deltaTime * speed, ForceMode2D.Force);
+			//Quaternion q = Quaternion.Euler(0, 0, angle-45);
+			//transform.rotation = Quaternion.RotateTowards(transform.rotation, q, 180);
+			//gameObject.GetComponent<Rigidbody2D> ().AddForce (transform.rotation * Vector3.up * Time.deltaTime * speed, ForceMode2D.Force);
 		}
 	}
 
