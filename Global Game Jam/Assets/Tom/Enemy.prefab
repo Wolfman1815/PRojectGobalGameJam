@@ -254,7 +254,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UnharmedTags:
-  - Enemy
   - Wall
   - Spike
 --- !u!212 &212376343697145584

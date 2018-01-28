@@ -8,6 +8,11 @@ public class SpikeCollider : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
+		if (other.gameObject == transform.parent.gameObject)
+		{
+			return;
+		}
+
 		var collidedObjectTag = other.gameObject.tag;
 		foreach (var tag in UnharmedTags)
 		{
