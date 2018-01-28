@@ -8,6 +8,7 @@ TagManager:
   - Fire
   - Wall
   - Breakable
+  - Spike
   layers:
   - Default
   - TransparentFX

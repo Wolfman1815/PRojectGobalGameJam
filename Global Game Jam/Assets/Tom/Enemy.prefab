@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114753752874079872}
   m_Layer: 0
   m_Name: Attack Spike
-  m_TagString: Enemy
+  m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 58735239394843024}
   - component: {fileID: 50805184587235278}
   - component: {fileID: 114644655681685374}
+  - component: {fileID: 114335611869558230}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -216,6 +217,19 @@ PolygonCollider2D:
     - - {x: 0.0101827085, y: 0.8490871}
       - {x: 0.5517111, y: -0.35244992}
       - {x: -0.528981, y: -0.35505506}
+--- !u!114 &114335611869558230
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1563948711396268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 742a65bd225ea3a44905fa318deae685, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaseRange: 1000
+  speed: 1300
 --- !u!114 &114644655681685374
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -242,6 +256,7 @@ MonoBehaviour:
   UnharmedTags:
   - Enemy
   - Wall
+  - Spike
 --- !u!212 &212376343697145584
 SpriteRenderer:
   m_ObjectHideFlags: 1

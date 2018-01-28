@@ -6,19 +6,19 @@ public class ChaseClosest : MonoBehaviour {
 	Transform target;
 	public float chaseRange;
 	public float speed;
-	public GameObject player;
 
-	void Start () {
-		
+	void Start ()
+	{
+		m_player = GameObject.FindGameObjectWithTag("Player");
 	}
 
 	void Update () {
 		target = FindClosestEnemy ().transform;
-		if (player != null) {
-			float distanceToPlayer = Vector3.Distance (transform.position, player.transform.position);
+		if (m_player != null) {
+			float distanceTom_player = Vector3.Distance (transform.position, m_player.transform.position);
 			float distanceToTarget = Vector3.Distance (transform.position, target.position);
-			if (distanceToPlayer < distanceToTarget) {
-				Vector3 targetDir = player.transform.position - transform.position;
+			if (distanceTom_player < distanceToTarget) {
+				Vector3 targetDir = m_player.transform.position - transform.position;
 				float angle = Mathf.Atan2 (targetDir.y, targetDir.x) * Mathf.Rad2Deg - 90f;
 				//Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
 				Quaternion q = Quaternion.Euler (0, 0, angle - 45);
@@ -44,7 +44,7 @@ public class ChaseClosest : MonoBehaviour {
 	}
 
 	GameObject FindClosestEnemy() {
-		GameObject closest = player;
+		GameObject closest = m_player;
 		GameObject[] gos = GameObject.FindGameObjectsWithTag("Enemy");
 		float distance = Mathf.Infinity;
 		Vector3 position = transform.position;
@@ -61,4 +61,6 @@ public class ChaseClosest : MonoBehaviour {
 		}
 		return closest;
 	}
+
+	private GameObject m_player;
 }

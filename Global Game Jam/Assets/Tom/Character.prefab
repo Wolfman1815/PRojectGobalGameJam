@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 114832950970258136}
   m_Layer: 0
   m_Name: Attack Spike
-  m_TagString: Player
+  m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -260,6 +260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackObject: {fileID: 1430642899293488}
+  AttackCooldownTimeSeconds: 0
 --- !u!114 &114512647812152512
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -272,6 +273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BarrierObject: {fileID: 1122272574614766}
+  BarrierCooldownTimeSeconds: 0
 --- !u!114 &114589565145892676
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -298,6 +300,7 @@ MonoBehaviour:
   UnharmedTags:
   - Player
   - Wall
+  - Spike
 --- !u!212 &212246739812766078
 SpriteRenderer:
   m_ObjectHideFlags: 1
