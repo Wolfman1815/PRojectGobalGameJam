@@ -14,21 +14,17 @@ public class ChaseClosest : MonoBehaviour {
 
 	void Update () {
 		if (Vector3.Distance (transform.position, player.transform.position) < chaseRange) {
-			Vector3 targetDir = player.transform.position - transform.position;
-			float angle = Mathf.Atan2 (targetDir.y, targetDir.x) * Mathf.Rad2Deg - 90f;
-			Quaternion q = Quaternion.AngleAxis (angle, Vector3.forward);
-			transform.rotation = Quaternion.RotateTowards (transform.rotation, q, 180);
-			transform.Translate (Vector3.up * Time.deltaTime * speed);
+			target = player.transform;
 		} else {
 			target = FindClosestEnemy().transform;
-			float distanceToTarget = Vector3.Distance(transform.position, target.position);
-			if(distanceToTarget < chaseRange) {
-				Vector3 targetDir = target.position - transform.position;
-				float angle = Mathf.Atan2(targetDir.y, targetDir.x) * Mathf.Rad2Deg - 90f;
-				Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
-				transform.rotation = Quaternion.RotateTowards(transform.rotation, q, 180);
-				transform.Translate(Vector3.up * Time.deltaTime * speed);
-			}
+		}
+		float distanceToTarget = Vector3.Distance(transform.position, target.position);
+		if(distanceToTarget < chaseRange) {
+			Vector3 targetDir = target.position - transform.position;
+			float angle = Mathf.Atan2(targetDir.y, targetDir.x) * Mathf.Rad2Deg - 90f;
+			Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
+			transform.rotation = Quaternion.RotateTowards(transform.rotation, q, 180);
+			gameObject.GetComponent<Rigidbody2D> ().AddForce (transform.rotation * Vector3.up * Time.deltaTime * speed, ForceMode2D.Force);
 		}
 	}
 
