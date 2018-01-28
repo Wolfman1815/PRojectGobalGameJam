@@ -194,6 +194,72 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &827248996
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 114753752874079872, guid: b7663220ed88f704fb5e28212d4bfe39,
+        type: 2}
+      propertyPath: UnharmedTags.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4896344135350154, guid: b7663220ed88f704fb5e28212d4bfe39, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4896344135350154, guid: b7663220ed88f704fb5e28212d4bfe39, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4896344135350154, guid: b7663220ed88f704fb5e28212d4bfe39, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4896344135350154, guid: b7663220ed88f704fb5e28212d4bfe39, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0.2840153
+      objectReference: {fileID: 0}
+    - target: {fileID: 4896344135350154, guid: b7663220ed88f704fb5e28212d4bfe39, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.95881975
+      objectReference: {fileID: 0}
+    - target: {fileID: 4896344135350154, guid: b7663220ed88f704fb5e28212d4bfe39, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4896344135350154, guid: b7663220ed88f704fb5e28212d4bfe39, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4896344135350154, guid: b7663220ed88f704fb5e28212d4bfe39, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114753752874079872, guid: b7663220ed88f704fb5e28212d4bfe39,
+        type: 2}
+      propertyPath: UnharmedTags.Array.data[2]
+      value: Spike
+      objectReference: {fileID: 0}
+    - target: {fileID: 114753752874079872, guid: b7663220ed88f704fb5e28212d4bfe39,
+        type: 2}
+      propertyPath: UnharmedTags.Array.data[0]
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 114753752874079872, guid: b7663220ed88f704fb5e28212d4bfe39,
+        type: 2}
+      propertyPath: UnharmedTags.Array.data[1]
+      value: Spike
+      objectReference: {fileID: 0}
+    - target: {fileID: 1563948711396268, guid: b7663220ed88f704fb5e28212d4bfe39, type: 2}
+      propertyPath: m_Name
+      value: Enemy (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: b7663220ed88f704fb5e28212d4bfe39, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1098632688
 Prefab:
   m_ObjectHideFlags: 0
@@ -243,11 +309,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114753752874079872, guid: b7663220ed88f704fb5e28212d4bfe39,
-        type: 2}
-      propertyPath: UnharmedTags.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4896344135350154, guid: b7663220ed88f704fb5e28212d4bfe39, type: 2}
       propertyPath: m_LocalPosition.x
       value: -5.3
@@ -279,21 +340,6 @@ Prefab:
     - target: {fileID: 4896344135350154, guid: b7663220ed88f704fb5e28212d4bfe39, type: 2}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114753752874079872, guid: b7663220ed88f704fb5e28212d4bfe39,
-        type: 2}
-      propertyPath: UnharmedTags.Array.data[2]
-      value: Spike
-      objectReference: {fileID: 0}
-    - target: {fileID: 114753752874079872, guid: b7663220ed88f704fb5e28212d4bfe39,
-        type: 2}
-      propertyPath: UnharmedTags.Array.data[0]
-      value: Wall
-      objectReference: {fileID: 0}
-    - target: {fileID: 114753752874079872, guid: b7663220ed88f704fb5e28212d4bfe39,
-        type: 2}
-      propertyPath: UnharmedTags.Array.data[1]
-      value: Spike
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b7663220ed88f704fb5e28212d4bfe39, type: 2}
